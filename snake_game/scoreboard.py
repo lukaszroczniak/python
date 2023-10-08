@@ -8,7 +8,7 @@ class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
-        with open("data.text") as data:
+        with open("data.txt") as data:
             self.high_score = int(data.read())
         self.penup()
         self.goto(0, 250)
@@ -18,7 +18,8 @@ class Score(Turtle):
 
     def update_score(self):
         self.clear()
-        self.write(f"Score: {self.score} High score: {self.high_score}", align=ALIGNMENT, font=FONT)
+        self.write(
+            f"Score: {self.score} High score: {self.high_score}", align=ALIGNMENT, font=FONT)
 
     def reset_game(self):
         if self.score > self.high_score:
